@@ -1,19 +1,19 @@
-## Article Managemet System
+# Article Management System
 
-# This project was built with:
+## This project was built with:
 - Spring Boot framework
 - Using MVC pattern
-- WebSecurity - In memory authentication
+- WebSecurity - In-memory authentication
 - Mybatis ORM framework
 - PostgreSQL database
-- Thymeleaf web tamplate enigne 
+- Thymeleaf web template engine 
 - Support two languages (EN & KH)
 
 
-# Project's features:
+## Project's features:
 - User login
-- List all the article with pagination
-- Add new article
+- List all the articles with pagination
+- Add a new article
 - Update article
 - Delete article
 - Search article
