@@ -1,0 +1,156 @@
+
+body{
+	font-family: 'Battambang','Roboto', cursive;
+}
+.texttitle{
+	font-size: 20px;
+	color: white;
+	font-style: italic;
+	padding-top: 10px;
+} 
+.icon{
+	width:50px;
+	height:32px;
+	margin:1px;
+	border-radius:3px;
+}
+.clear{
+	clear:both;
+}
+img{
+	width:180px;
+	height:120px;
+}
+table, tr,td{
+	text-align:center;
+}
+th, td{
+	text-align:center !important;
+    vertical-align: middle !important;
+}
+.btnwidth{
+	width:80px;
+}
+a:hover{
+	text-decoration: none !important;
+}
+.vertical-alignment-helper {
+    display:table;
+    width: 60%;
+    margin: 10% 20%;
+}
+.vertical-align-center {
+    /* To center vertically */
+    display: table-cell;
+    vertical-align: middle;
+}
+.footer{
+	color:white;
+	background-color: #222;
+	height: 50px;
+	padding:15px;
+	font-size:16px;
+	font-style: italic;
+}
+.margin{
+	margin-top:70px;
+}
+
+/* log in */
+.form-signin-backcolor{
+	background-color: #555;
+}
+.form-signin
+{
+    max-width: 330px;
+    padding: 15px;
+    margin: 0 auto;
+}
+.form-signin .form-signin-heading, .form-signin .checkbox
+{
+    margin-bottom: 10px;
+}
+.form-signin .checkbox
+{
+    font-weight: normal;
+}
+.form-signin .form-control
+{
+    position: relative;
+    font-size: 16px;
+    height: auto;
+    padding: 10px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 15px 0;
+}
+.form-signin .form-control:focus
+{
+    z-index: 2;
+}
+.account-wall
+{
+    margin-top: 20px;
+    padding: 40px 0px 20px 0px;
+    background-color: #f7f7f7;
+    -moz-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+}
+.login-title
+{
+    color: #fff;
+    font-size: 19px;
+    font-weight: 400;
+    display: block;
+}
+.profile-img
+{
+    width: 96px;
+    height: 96px;
+    margin: 0 auto 10px;
+    display: block;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+}
+
+.clred{
+	color:red;
+}
+.pd{
+	padding-top:35px;
+}
+.h1{
+	text-align:center;
+	padding:20px;
+}
+.simg{
+	border: 1px solid gray;
+	text-align:center;
+	border-radius:10px;
+}
+
+.btn-art-detail{
+	width:100px;
+	margin:10px 0 50px;
+}
+/* .bg{
+	background-color:#555;
+} */
+.bgcon{
+	background-color:#fff;
+	height:533px;
+	margin-top:50px;
+}
+
+/* article detail */
+.art-detail{
+	margin: 50px 0;
+}
+.align-center{
+	text-align:center;
+	padding:5px;
+}

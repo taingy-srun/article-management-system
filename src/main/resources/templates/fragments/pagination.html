@@ -1,0 +1,16 @@
+<h2 th:text="${norecord}"></h2>
+<div style="height: 35px" th:fragment="pagination" th:class="${hidden}">
+	<nav aria-label="Page navigation" class="pull-right">
+		<ul class="pagination">
+			<li th:class="${disableppage}"><a
+				th:href="${isSearchPage}?@{?(cate_id=${filter.cate_id},title=${filter.title},page=${fpage})}:@{?(page=1)}">First</a></li>
+			<li th:class="${disableppage}"><a
+				th:href="${isSearchPage}?@{?(cate_id=${filter.cate_id},title=${filter.title},page=${ppage})}:@{?(page=${ppage})}">Previous</a></li>
+			<li><a th:text="#{Page: } + ${page}+ ' / ' + ${lpage}"></a></li>
+			<li th:class="${disablenpage}"><a
+				th:href="${isSearchPage}?@{?(cate_id=${filter.cate_id},title=${filter.title},page=${npage})}:@{?(page=${npage})}">Next</a></li>
+			<li th:class="${disablenpage}"><a
+				th:href="${isSearchPage}?@{?(cate_id=${filter.cate_id},title=${filter.title},page=${lpage})}:@{?(page=${lpage})}">Last</a></li>
+		</ul>
+	</nav>
+</div>

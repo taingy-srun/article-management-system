@@ -1,0 +1,34 @@
+<div th:fragment="displayarticle">
+	<table class="table table-striped table-inverse" id="mytable">
+		<thead>
+			<tr>
+				<th th:text="#{id}" width="100">Id</th>
+				<th th:text="#{title}">Title</th>
+				<th th:text="#{description}">Description</th>
+				<th th:text="#{thumbnail}">Thumbnail</th>
+				<th th:text="#{category}">Category</th>
+				<th th:text="#{action}">Action</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="art: ${article}" th:object="${art}" class="align-middle">
+				<td th:text="*{id}" width="8%"></td>
+				<td th:text="*{title}" width="15%"></td>
+				<td th:text="*{description}" width="20%"></td>
+				<td width="22%"><img th:src="@{*{thumbnail}}" /></td>
+				<td th:text="*{category.cate_desc}" width="10%"></td>
+				<td width="25%"><a th:href="@{/article/aid(id=*{id})}">
+						<button type="button" class="btn btn-info btnwidth"
+							th:text="#{view}"></button>
+				</a> <a th:href="@{/article/edit(id=*{id})}" class="modal-editarticle" sec:authorize="hasAnyRole('ROLE_DBA','ROLE_ADMIN')">
+						<button type="button" class="btn btn-warning btnwidth"
+							id="btnedit" th:text="#{edit}"></button>
+				</a> 
+				<a th:href="@{/article/remove(id=*{id})}" sec:authorize="hasRole('ROLE_ADMIN')">
+						<button type="button" class="btn btn-danger btnwidth"
+							th:text="#{remove}"></button>
+				</a></td>
+			</tr>
+		</tbody>
+	</table>
+</div>

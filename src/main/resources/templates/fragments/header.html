@@ -1,0 +1,55 @@
+<!-- ===================nav=========================== -->
+<nav class="navbar navbar-inverse navbar-fixed-top" th:fragment="header">
+	<div class="container-fluid">
+		<!-- Brand and toggle get grouped for better mobile display -->
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed"
+				data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
+				aria-expanded="false">
+				<span class="sr-only">Toggle navigation</span> <span
+					class="icon-bar"></span> <span class="icon-bar"></span> <span
+					class="icon-bar"></span>
+			</button>
+			<a href="/"><p class="texttitle" th:text="#{am}">Article
+					Management</p></a>
+		</div>
+
+		<!-- Collect the nav links, forms, and other content for toggling -->
+		<div class="collapse navbar-collapse"
+			id="bs-example-navbar-collapse-1">
+			<ul class="nav navbar-nav">
+				<li><a href="/article" th:text="#{article}">Article</a></li>
+				<li><a href="#" th:text="#{category}">Category</a></li>
+				<!-- th:href="@{/category}" -->
+				<li class="dropdown"><a href="#" class="dropdown-toggle"
+					data-toggle="dropdown" role="button" aria-haspopup="true"
+					aria-expanded="false"><span th:text="#{more}"></span> <span
+						class="caret"></span></a>
+					<ul class="dropdown-menu">
+						<li><a href="#" th:text="#{addarticle}">Add Article</a></li>
+						<li role="separator" class="divider"></li>
+						<li><a href="#" th:text="#{addcategory}">Add Category</a></li>
+					</ul></li>
+			</ul>
+			<form class="navbar-form navbar-right">
+				<div class="form-group">
+					<input type="text" class="form-control"
+						th:placeholder="#{search}+...">
+				</div>
+				<button type="submit" class="btn btn-default"
+					style="margin-right: 10px" th:text="#{search}">Search</button>
+				<a href="/?lang=kh"><img th:src="@{/resources/images/khmer.png}"
+					class="icon" /></a> <a href="/?lang=en"><img
+					th:src="@{/resources/images/english.png}" class="icon" /></a> <a
+					href="/logout"><input type="button" value="Logout" class="btn btn-primary" /></a>
+					
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+		          	<img style="width: 45px; height: 45px; border-radius: 50%; object-fit: cover" src="https://cdn3.iconfinder.com/data/icons/trico-circles-solid/24/Circle-Solid-Profile-512.png"/>
+		          </a>
+					
+			</form>
+		</div>
+		<!-- /.navbar-collapse -->
+	</div>
+	<!-- /.container-fluid -->
+</nav>

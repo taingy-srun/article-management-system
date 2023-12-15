@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1" />
+<link href="https://fonts.googleapis.com/css?family=Battambang|Roboto"
+	rel="stylesheet" />
+<link th:href="@{/bootstrap/css/bootstrap.min.css}" rel="stylesheet">
+<link rel="stylesheet" th:href="@{/css/article.css}" />
+
+<title>Article</title>
+</head>
+<body class="bg">
+	<div th:replace="fragments/header :: header"></div>
+	<div class="container bgcon">
+		<div class="col-md-1"></div>
+		<div class="col-md-10">
+			<h1 class="h1">Editing Article</h1>
+			<form th:action="@{/article/update}" method="POST"
+				th:object="${article}" enctype="multipart/form-data">
+				<div class="form-group row hidden">
+					<label for="title" class="col-md-2 col-form-label">ID</label>
+					<div class="col-md-10">
+						<input type="text" class="form-control" th:field="*{id}">
+					</div>
+				</div>
+				<div class="form-group row">
+					<label for="title" class="col-md-2 col-form-label">Title</label>
+					<div class="col-md-10">
+						<input type="text" class="form-control" th:field="*{title}"
+							placeholder="Input title"> <span
+							th:if="${#fields.hasErrors('title')}"
+							th:text="'please enter the title.'" class="clred"></span>
+					</div>
+				</div>
+				<div class="form-group row">
+					<label for="description" class="col-md-2">Description</label>
+					<div class="col-md-10">
+						<textarea class="form-control" rows="3" th:field="*{description}"></textarea>
+						<span th:if="${#fields.hasErrors('description')}"
+							th:text="'please enter the description.'" class="clred"></span>
+					</div>
+				</div>
+				<div class="form-group row">
+					<label for="file" class="col-md-2 pd">Thumbnail</label>
+					<div class="col-md-3 pd">
+						<input type="file" name="file" class="form-control-file" 
+							aria-describedby="fileHelp">
+
+					</div>
+					<div class="col-md-3 simg">
+						<img th:src="*{thumbnail}">
+					</div>
+				</div>
+				<div class="form-group row">
+					<label for="category" class="col-md-2">Category</label>
+					<div class="col-md-10">
+						<select class="form-control"
+							name="category.cate_id">
+							<option th:each="cate: ${artCate}" th:object="${cate}"
+								th:value="*{cate_id}" th:text="*{cate_desc}"></option>
+						</select>
+					</div>
+				</div>
+				<div class="form-group row">
+					<div class="col-md-2"></div>
+					<div class="col-md-4">
+						<button type="submit" class="btn btn-info">Submit</button>
+						<a th:href="@{/article}"><input type="button" class="btn btn-warning" value="Cancel" /></a>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+	<div th:replace="fragments/footer"></div>
+</body>
+<script th:src="@{/bootstrap/js/jQuery-2.2.4.js}"></script>
+<script th:src="@{/bootstrap/js/bootstrap.min.js}"></script>
+
+</html>

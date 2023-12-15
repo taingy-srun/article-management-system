@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1" />
+<title>Article</title>
+<link rel="stylesheet" th:href="@{/css/article.css}" />
+<link href="https://fonts.googleapis.com/css?family=Battambang|Roboto" rel="stylesheet"/> 
+</head>
+<body>
+	<h1>Category</h1>
+	<table>
+		<tr>
+			<th  width="100">Id</th>
+			<th>Description</th>
+			<th>Action</th>
+		</tr>
+		<tr th:each="cate: ${category}" th:object="${cate}">
+			<td th:text="*{cate_id}"></td>
+			<td th:text="*{cate_desc}"></td>
+			<td>
+				<!-- <a th:text="#{view}" th:href="@{article/aid(id=*{id})}">View</a> | 
+				<a th:text="#{edit}" th:href="@{article/edit(id=*{id})}">Edit</a> | 
+				<a th:text="#{remove}" th:href="@{article/remove(id=*{id})}">Remove</a> -->
+			</td>
+		</tr>
+	</table>
+</body>
+</html>

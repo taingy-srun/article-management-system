@@ -1,0 +1,20 @@
+<div class="margin">
+	<form class="navbar-form navbar-left" th:action="@{/article/search}"
+		th:fragment="filterarticle">
+		<a href="#" id="modal-addarticle-li">
+			<button type="button" class="btn btn-info" th:text="#{addarticle}"></button>
+		</a>
+		<!-- Search Category -->
+		<select class="form-control" th:field="${filter.cate_id}">
+			<option value="0">--Category--</option>
+			<option th:each="cate: ${artCate}" th:object="${cate}"
+				th:value="*{cate_id}" th:text="*{cate_desc}"></option>
+		</select>
+		<div class="form-group">
+			<input type="text" class="form-control" th:field="${filter.title}"
+				th:placeholder="#{search}+...">
+		</div>
+		<button type="submit" class="btn btn-default"
+			style="margin-right: 10px" th:text="#{search}">Search</button>
+	</form>
+</div>

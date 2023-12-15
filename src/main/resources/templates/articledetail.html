@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1" />
+<title>Article Detail</title>
+<link href="https://fonts.googleapis.com/css?family=Battambang|Roboto"
+	rel="stylesheet" />
+<!-- Bootstrap -->
+<link th:href="@{/bootstrap/css/bootstrap.min.css}" rel="stylesheet">
+<link rel="stylesheet" th:href="@{/css/article.css}" />
+</head>
+<body class="art-detail">
+	<div th:replace="fragments/header :: header"></div>
+	<div class="container">
+		<div class="col-md-2"></div>
+		<h1 class="align-center">Article Detail</h1>
+		<table class="table table-striped table-inverse">
+			<thead>
+				<tr>
+					<th th:text="#{id}" width="100">Id</th>
+					<th th:text="#{title}">Title</th>
+					<th th:text="#{description}">Description</th>
+					<th th:text="#{thumbnail}">Thumbnail</th>
+					<th th:text="#{category}">Category</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:object="${article}">
+					<td th:text="*{id}"></td>
+					<td th:text="*{title}"></td>
+					<td th:text="*{description}"></td>
+					<td><img th:src="*{thumbnail}" /></td>
+					<td th:text="*{category.cate_desc}" width="10%"></td>
+
+				</tr>
+			</tbody>
+		</table>
+		<a th:href="@{/article}"><button class="btn btn-primary btn-art-detail">Back</button></a>
+	</div>
+	<div th:replace="fragments/footer"></div>
+</body>
+<script th:src="@{/bootstrap/js/jQuery-2.2.4.js}"></script>
+<script th:src="@{/bootstrap/js/bootstrap.min.js}"></script>
+</html>
